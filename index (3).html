@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Para meu amorzinho ❤️</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap');
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff9e6;
+    font-family: 'Roboto', sans-serif;
+    color: #5a3e1b;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fffdf2;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(255, 223, 82, 0.4);
+    text-align: center;
+    position: relative;
+    border: 3px solid #ffdb4d;
+  }
+
+  h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: #fbbf24;
+    text-shadow: 1px 1px 3px #d4af37;
+  }
+
+  p {
+    font-size: 1.15em;
+    line-height: 1.5em;
+    margin-bottom: 30px;
+  }
+
+  .sunflower {
+    width: 120px;
+    margin: 0 auto 20px auto;
+  }
+
+  button {
+    background: #fbbf24;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #5a3e1b;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(251, 191, 36, 0.6);
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #e0a800;
+  }
+
+  #secretMsg {
+    margin-top: 25px;
+    font-style: italic;
+    font-weight: 600;
+    color: #bb6b08;
+    display: none;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .gallery img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 2px solid #fbbf24;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  }
+
+  .heart {
+    position: fixed;
+    color: #fbbf24;
+    font-size: 18px;
+    animation: floatUp 5s linear infinite;
+    opacity: 0.7;
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(-120vh) scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      margin: 20px 15px;
+      padding: 15px;
+    }
+
+    h1 {
+      font-size: 2.2em;
+    }
+
+    .gallery img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img src="girassol.jpg" alt="Girassol" class="sunflower" />
+  <h1>Para meu amorzinho ❤️</h1>
+  <p>Amorzinho, cada dia que passo pensando em você, meu coração floresce como um girassol ao sol. Você ilumina minha vida com seu sorriso, sua doçura e essa vibe que só você tem. Mesmo quando estamos longe, sinto você pertinho, aquecendo minha alma. Obrigado por ser essa pessoa tão incrível, tão fofa, tão especial. Te amo mais do que palavras podem dizer.</p>
+
+  <div class="gallery">
+    <img src="https://picsum.photos/id/1011/300" alt="foto1" />
+    <img src="https://picsum.photos/id/1015/300" alt="foto2" />
+    <img src="https://picsum.photos/id/1025/300" alt="foto3" />
+    <img src="https://picsum.photos/id/1027/300" alt="foto4" />
+  </div>
+
+  <button id="btnSecret">Clique aqui, amorzinho 💛</button>
+  <div id="secretMsg">Você é meu sol, minha inspiração e minha felicidade. Para sempre seu, <br> ❤️</div>
+</div>
+
+<script>
+  const btn = document.getElementById('btnSecret');
+  const secretMsg = document.getElementById('secretMsg');
+  btn.addEventListener('click', () => {
+    if (secretMsg.style.display === 'none' || secretMsg.style.display === '') {
+      secretMsg.style.display = 'block';
+      btn.textContent = 'Esconder mensagem 💛';
+    } else {
+      secretMsg.style.display = 'none';
+      btn.textContent = 'Clique aqui, amorzinho 💛';
+    }
+  });
+
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (12 + Math.random() * 20) + 'px';
+    heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+    heart.textContent = '❤️';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+  }
+
+  setInterval(createHeart, 700);
+</script>
+
+</body>
+</html>
